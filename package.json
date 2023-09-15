@@ -16,13 +16,6 @@
         "uiTheme": "vs-dark",
         "path": "./themes/Ts Theme-color-theme.json"
       }
-    ],
-    "semanticTokenTypes": [
-      {
-        "id": "templateType",
-        "superType": "type",
-        "description": "test"
-      }
     ]
   }
 }
