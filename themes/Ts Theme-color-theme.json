@@ -3,20 +3,48 @@
   "colors": {
     "editor.background": "#16161b",
     "editor.foreground": "#c5c9c8",
+    
     "activityBar.background": "#16161b",
+    "activityBar.foreground": "#6d6d6d",
     "activityBarBadge.background": "#16161b",
+
     "badge.background": "#25222e",
     "badge.foreground": "#3f3c57",
+    
     "editorGroupHeader.tabsBackground": "#16161b",
     "editorWidget.background": "#16161b",
+    
     "sideBar.background": "#16161b",
+    "sideBar.foreground": "#6d6d6d",
     "sideBarSectionHeader.background": "#16161b",
+    "list.activeSelectionBackground": "#282831",
+    "list.inactiveSelectionBackground": "#282831",
+    "list.hoverBackground": "#282831",
+    "list.errorForeground": "#de3846",
+    "list.warningForeground": "#f0ac22",
+    "gitDecoration.ignoredResourceForeground": "#46464b",
+    "gitDecoration.modifiedResourceForeground": "#d8ab70",
+    "gitDecoration.conflictingResourceForeground": "#f0ac22",
+
+    "editorGutter.addedBackground": "#2ca544",
+
     "titleBar.activeBackground": "#16161b",
     "titleBar.inactiveBackground": "#16161b",
+
     "tab.activeBackground": "#282831",
     "tab.inactiveBackground": "#16161b",
     "tab.border": "#16161b",
+
     "editorLineNumber.foreground": "#46464b",
+
+    "statusBarItem.remoteBackground": "#282831",
+    "statusBarItem.remoteForeground": "#6d6d6d",
+    "statusBar.background": "#282831",
+    "statusBar.foreground": "#6d6d6d",
+
+    "editorBracketHighlight.foreground1": "#d8ab70",
+    "editorBracketHighlight.foreground2": "#c03c8f",
+    "editorBracketHighlight.foreground3": "#428aff",
   },
   "tokenColors": [
     {
@@ -29,6 +57,7 @@
         "keyword.operator.new", // match 'new'
         "meta.class meta.type.parameters storage.modifier", // match 'extends'
         "meta.field.declaration meta.type.annotation storage.modifier", // match 'extends'
+        "meta.var.expr meta.class storage.modifier", // match 'extends'
       ],
       "settings": {
         "foreground": "#0483a3",
@@ -107,6 +136,7 @@
         "variable.parameter",
         "meta.var.expr meta.object.member variable",
 
+        "entity.name.tag", // jsx
 
         "meta.interface meta.type.parameters entity.name.type",
         "meta.method.declaration meta.type.parameters entity.name.type",
@@ -128,7 +158,8 @@
         "meta.definition.property variable",
         "meta.definition.property variable.object.property",
         "punctuation.definition.template-expression", // match '${var}'
-        "meta.enum.declaration variable.other.enummember"
+        "meta.enum.declaration variable.other.enummember",
+        "entity.other.attribute-name", // match props on jsx
       ],
       "settings": {
         "foreground": "#c05921",
@@ -189,6 +220,8 @@
         "punctuation.separator.comma", // match ','
         "punctuation.separator.key-value", // match ':'
         "punctuation.terminator.statement", // match ';'
+        //"punctuation.definition.tag", // < div >
+        "meta.tag.attributes keyword.operator.assignment", // props jsx =
       ],
       "settings": {
         "foreground": "#6d6d6d",
