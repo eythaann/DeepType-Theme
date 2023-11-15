@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "powershell",
+  "patterns": [
+    {
+      "match": "(^\\s*(\\w+-?(\\w+)?))|(\\w+-\\w+)",
+      "name": "support.function.powershell"
+    },
+    {
+      "match": "#.*",
+      "name": "comment.powershell"
+    },
+    {
+      "match": " -?(-\\w+)+",
+      "name": "command.parameter"
+    },
+    {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.powershell",
+      "patterns": [
+        {
+          "include": "#variable-pattern"
+        }
+      ]
+    },
+    {
+      "include": "#variable-pattern"
+    }
+  ],
+  "repository": {
+    "variable-pattern": {
+      "begin": "(\\$\\w+)",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.powershell"
+        }
+      },
+      "end": "(?![\\w:])",
+      "patterns": [
+        {
+          "match": ":(\\w+)",
+          "captures": {
+            "1": {
+              "name": "variable.property.powershell"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "source.powershell"
+}

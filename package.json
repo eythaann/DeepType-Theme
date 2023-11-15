@@ -16,6 +16,13 @@
         "uiTheme": "vs-dark",
         "path": "./themes/Ts Theme-color-theme.json"
       }
+    ],
+    "grammars": [
+      {
+        "scopeName": "source.powershell",
+        "path": "./grammars/powershell.json",
+        "language": "powershell"
+      }
     ]
   }
 }

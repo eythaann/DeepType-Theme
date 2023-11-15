@@ -144,6 +144,9 @@
         "meta.type.declaration meta.type.parameters entity.name.type",
         "meta.arrow meta.type.parameters entity.name.type",
         "meta.class meta.type.parameters entity.name.type",
+
+        // powershell
+        "command.parameter",
       ],
       "settings": {
         "foreground": "#de3846",
