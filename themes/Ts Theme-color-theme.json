@@ -163,6 +163,7 @@
         "punctuation.definition.template-expression", // match '${var}'
         "meta.enum.declaration variable.other.enummember",
         "entity.other.attribute-name", // match props on jsx
+        "entity.name.section.group-title.ini"
       ],
       "settings": {
         "foreground": "#c05921",
@@ -179,6 +180,7 @@
         "support.variable.property",
         "meta.object.type variable.object.property",
         "meta.template.expression meta.embedded.line variable",
+        "keyword.other.definition.ini",
       ],
       "settings": {
         "foreground": "#d8ab70",
@@ -255,6 +257,7 @@
       "name": "STRINGS",
       "scope": [
         "string",
+        "source.ini" // match all in properties files (.gitconfig as example)
       ],
       "settings": {
         "foreground": "#5dce74",
