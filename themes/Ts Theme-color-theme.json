@@ -117,9 +117,9 @@
         "keyword.control.conditional",  // match 'if else'
         "keyword.operator.type.modifier", // match 'type-?: string'
         "keyword.operator.optional", // match 'type?: string'
-        "meta.field.declaration storage.modifier", // match 'public private protected readonly'
-        "meta.indexer.mappedtype.declaration storage.modifier", // match 'readonly'
-        "meta.class storage.modifier", // match 'readonly'
+        //"meta.field.declaration storage.modifier", // match 'public private protected readonly'
+        //"meta.indexer.mappedtype.declaration storage.modifier", // match 'readonly'
+        //"meta.class storage.modifier", // match 'readonly'
         "storage.type.function.arrow", // match '=>'
       ],
       "settings": {
@@ -145,7 +145,7 @@
         "meta.arrow meta.type.parameters entity.name.type",
         "meta.class meta.type.parameters entity.name.type",
 
-        // powershell
+        // pwsh - bash
         "command.parameter",
       ],
       "settings": {

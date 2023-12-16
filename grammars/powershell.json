@@ -3,21 +3,60 @@
   "name": "powershell",
   "patterns": [
     {
-      "match": "(^\\s*(\\w+-?(\\w+)?))|(\\w+-\\w+)",
-      "name": "support.function.powershell"
-    },
-    {
       "match": "#.*",
-      "name": "comment.powershell"
+      "name": "comment"
     },
     {
-      "match": " -?(-\\w+)+",
+      "begin": "<#",
+      "end": "#>",
+      "name": "comment"
+    },
+    {
+      "match": "function",
+      "name": "storage.type.function"
+    },
+    {
+      "match": "if|else",
+      "name": "keyword.control.conditional"
+    },
+    {
+      "match": "return",
+      "name": "keyword.control.flow"
+    },
+    {
+      "match": "\\d+",
+      "name": "constant.numeric"
+    },
+    {
+      "match": "-?(-\\w+)+",
       "name": "command.parameter"
+    },
+    {
+      "match": "\\s\\w+=",
+      "name": "command.parameter"
+    },
+    {
+      "match": "(?<=\\s-?(-\\w+)+\\s)\\w+",
+      "name": "string.noquoted"
+    },
+    {
+      "match": "(-?\\w+)+(\\.exe)?",
+      "name": "support.function"
     },
     {
       "begin": "\"",
       "end": "\"",
-      "name": "string.quoted.double.powershell",
+      "name": "string.quoted.double",
+      "patterns": [
+        {
+          "include": "#variable-pattern"
+        }
+      ]
+    },
+    {
+      "begin": "'",
+      "end": "'",
+      "name": "string.quoted.single",
       "patterns": [
         {
           "include": "#variable-pattern"
@@ -33,7 +72,7 @@
       "begin": "(\\$\\w+)",
       "beginCaptures": {
         "1": {
-          "name": "variable.powershell"
+          "name": "variable"
         }
       },
       "end": "(?![\\w:])",
@@ -42,7 +81,7 @@
           "match": ":(\\w+)",
           "captures": {
             "1": {
-              "name": "variable.property.powershell"
+              "name": "variable.property"
             }
           }
         }
