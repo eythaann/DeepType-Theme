@@ -4,12 +4,12 @@
   "patterns": [
     {
       "match": "#.*",
-      "name": "comment"
+      "name": "comment.line"
     },
     {
       "begin": "<#",
       "end": "#>",
-      "name": "comment"
+      "name": "comment.block"
     },
     {
       "match": "function",
@@ -36,11 +36,15 @@
       "name": "command.parameter"
     },
     {
-      "match": "(?<=\\s-?(-\\w+)+\\s)\\w+",
+      "match": "(?<=\\s-?(-\\w+)+\\s)[A-z0-9\\.\\:\\/\\=\\?\\\\]+",
       "name": "string.noquoted"
     },
     {
-      "match": "(-?\\w+)+(\\.exe)?",
+      "match": "^\\s*[\\.\\~].*\\\\",
+      "name": "path"
+    },
+    {
+      "match": "([\\.\\-\\d\\w]+){2}(\\.exe)?",
       "name": "support.function"
     },
     {
