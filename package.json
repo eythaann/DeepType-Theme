@@ -1,7 +1,8 @@
 {
   "name": "deep-type-theme",
-  "displayName": "Deep Type Theme",
+  "displayName": "DeepType Theme",
   "description": "Theme for vscode",
+  "icon": "logo.png",
   "publisher": "eythaann",
   "repository": {
     "url": "https://github.com/eythaann/DeepType-Theme"
