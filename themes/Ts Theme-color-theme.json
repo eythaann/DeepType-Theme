@@ -3,17 +3,14 @@
   "colors": {
     "editor.background": "#16161b",
     "editor.foreground": "#c5c9c8",
-    
+    "editorInlayHint.foreground": "#6d6d6d",
     "activityBar.background": "#16161b",
     "activityBar.foreground": "#6d6d6d",
     "activityBarBadge.background": "#16161b",
-
     "badge.background": "#25222e",
     "badge.foreground": "#3f3c57",
-    
     "editorGroupHeader.tabsBackground": "#16161b",
     "editorWidget.background": "#16161b",
-    
     "sideBar.background": "#16161b",
     "sideBar.foreground": "#6d6d6d",
     "sideBarSectionHeader.background": "#16161b",
@@ -25,23 +22,17 @@
     "gitDecoration.ignoredResourceForeground": "#46464b",
     "gitDecoration.modifiedResourceForeground": "#d8ab70",
     "gitDecoration.conflictingResourceForeground": "#f0ac22",
-
     "editorGutter.addedBackground": "#2ca544",
-
     "titleBar.activeBackground": "#16161b",
     "titleBar.inactiveBackground": "#16161b",
-
     "tab.activeBackground": "#282831",
     "tab.inactiveBackground": "#16161b",
     "tab.border": "#16161b",
-
     "editorLineNumber.foreground": "#46464b",
-
     "statusBarItem.remoteBackground": "#282831",
     "statusBarItem.remoteForeground": "#6d6d6d",
     "statusBar.background": "#282831",
     "statusBar.foreground": "#6d6d6d",
-
     "editorBracketHighlight.foreground1": "#d8ab70",
     "editorBracketHighlight.foreground2": "#c03c8f",
     "editorBracketHighlight.foreground3": "#428aff",
@@ -51,8 +42,9 @@
       "name": "------ KEY WORDS ------",
       "scope": [
         "storage", // match 'const, let, etc'
+        "keyword.other.rust", // 'pub', 'unsafe', etc
+        "keyword.other.fn.rust", // match 'fn'
         "meta.method.declaration meta.var.expr storage.type", // match 'const' inside methods
-        "variable.language.this", // match 'this'
         "keyword.operator.expression", // match 'typeof keyof infer'
         "keyword.operator.new", // match 'new'
         "meta.class meta.type.parameters storage.modifier", // match 'extends'
@@ -63,8 +55,6 @@
         "foreground": "#0483a3",
       }
     },
-
-
     {
       "name": "------ FUNCTIONS ------",
       "scope": [
@@ -77,19 +67,19 @@
       "settings": {
         "foreground": "#428aff",
       }
-    }, { 
-      "scope": "meta.method.declaration storage.type", 
+    },
+    {
+      "scope": "meta.method.declaration storage.type",
       "settings": {
         "fontStyle": "bold"
-      } 
+      }
     },
-
-
     {
       "name": "------ IMPORTS ------",
       "scope": [
         "keyword.control.from",
         "keyword.control.import",
+        "meta.use.rust keyword.other.rust", // `use` keyword
       ],
       "settings": {
         "foreground": "#8C4A32",
@@ -99,60 +89,62 @@
     {
       "name": "------ EXPORTS ------",
       "scope": [
-        "keyword.control",
+        "keyword.control.export",
       ],
       "settings": {
         "foreground": "#8C4A32",
         "fontStyle": "bold"
       }
     },
-
-
-
-
+    {
+      "scope": [
+        "keyword.control", // return, break, continue, await, switch, etc.
+        "keyword.control.rust",
+      ],
+      "settings": {
+        "foreground": "#8C4A32",
+        "fontStyle": "italic"
+      }
+    },
     {
       "name": "------ HIGHLIGHTS ------",
       "scope": [
         "keyword.operator.ternary", // match '?' ':'
-        "keyword.control.conditional",  // match 'if else'
+        "keyword.control.conditional", // match 'if else'
         "keyword.operator.type.modifier", // match 'type-?: string'
         "keyword.operator.optional", // match 'type?: string'
         //"meta.field.declaration storage.modifier", // match 'public private protected readonly'
         //"meta.indexer.mappedtype.declaration storage.modifier", // match 'readonly'
         //"meta.class storage.modifier", // match 'readonly'
         "storage.type.function.arrow", // match '=>'
+        // "keyword.operator.arrow.skinny.rust",
       ],
       "settings": {
         "foreground": "#00b3d3",
         "fontStyle": "bold"
       }
     },
-
-
-
     {
       "name": "------ PARAMETERS ------",
       "scope": [
         "variable.parameter",
         "meta.var.expr meta.object.member variable",
-
         "entity.name.tag", // jsx
-
         "meta.interface meta.type.parameters entity.name.type",
         "meta.method.declaration meta.type.parameters entity.name.type",
         "meta.field.declaration meta.type.parameters entity.name.type",
         "meta.type.declaration meta.type.parameters entity.name.type",
         "meta.arrow meta.type.parameters entity.name.type",
         "meta.class meta.type.parameters entity.name.type",
-
         // pwsh - bash
         "command.parameter",
+        // rust
+        // "meta.function.definition.rust variable.other.rust",
       ],
       "settings": {
         "foreground": "#de3846",
       }
     },
-
     {
       "name": "------ PROPERTIES DEFINITION ------",
       "scope": [
@@ -169,11 +161,8 @@
         "foreground": "#c05921",
       }
     },
-
-
-
     {
-      "name": "variables other",
+      "name": "------ VARIABLES ------",
       "scope": [
         "variable",
         "variable.other.object.property",
@@ -186,9 +175,26 @@
         "foreground": "#d8ab70",
       }
     },
-
-
-
+    {
+      "name": "------ VARIABLES LANGUAGE ------",
+      "scope": [
+        "variable.language.super", // match 'super'
+        "variable.language.this", // match 'this'
+        "variable.language.self", // match 'self'
+      ],
+      "settings": {
+        "foreground": "#0483a3",
+      }
+    },
+    {
+      "name": "------ CONSTANTS ------",
+      "scope": [
+        "constant",
+      ],
+      "settings": {
+        "foreground": "#1696c1",
+      }
+    },
     {
       "name": "------ TYPES ------",
       "scope": [
@@ -198,7 +204,6 @@
         "variable.other.object",
         "variable.other.constant.object",
         "meta.interface entity.other.inherited-class",
-
         "meta.class entity.other.inherited-class"
       ],
       "settings": {
@@ -210,42 +215,38 @@
       "scope": [
         "support.type",
         "meta.indexer.mappedtype.declaration",
+        "entity.name.type.numeric.rust",
+        "entity.name.type.primitive.rust",
       ],
       "settings": {
         "foreground": "#cc850b",
       }
     },
-
-
     {
-      "name": "COMMENTS",
+      "name": "------ SECOND PLANE THINGS ------",
       "scope": [
         "comment",
-        "keyword.operator.type.annotation",
-        "punctuation.separator.comma", // match ','
-        "punctuation.separator.key-value", // match ':'
-        "punctuation.terminator.statement", // match ';'
-        //"punctuation.definition.tag", // < div >
+        "punctuation", // '.' - ',' - ';' - '<' - '>' - '"'
+        "keyword.operator.type.annotation", // match ':' on types
+        "keyword.operator.access.dot.rust", // match '.' on rust
         "meta.tag.attributes keyword.operator.assignment", // props jsx =
       ],
       "settings": {
         "foreground": "#6d6d6d",
       }
     },
-
-
-
     {
-      "name": "Primitives Declared",
+      "name": "------ SUBTEXT ------",
       "scope": [
-        "constant",
+        // "meta.attribute.rust",
+        // "entity.name.namespace.rust",
       ],
       "settings": {
-        "foreground": "#1696c1",
+        "foreground": "#b5b5b5",
       }
     },
     {
-      "name": "NUMBERS",
+      "name": "------ NUMBER LITERAL ------",
       "scope": [
         "constant.numeric",
       ],
@@ -254,7 +255,7 @@
       }
     },
     {
-      "name": "STRINGS",
+      "name": "------ STRING LITERAL ------",
       "scope": [
         "string",
         "source.ini" // match all in properties files (.gitconfig as example)
